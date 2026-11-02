@@ -1,0 +1,10 @@
+{
+  "name": "turnaround-life",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test tests/*.test.js",
+    "check": "node --check js/app.js && node --check js/core/database.js && node --check js/core/settings.js && node --check js/features/navigation.js && node --check js/features/settings-ui.js && node --check service-worker.js && node --check netlify/functions/usda.js"
+  }
+}

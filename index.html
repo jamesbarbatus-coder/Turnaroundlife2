@@ -1,26 +1,85 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#173f35"><meta name="description" content="Turnaround Life nutrition planner and food journal">
-<title>Turnaround Life | Nutrition, made clear</title><link rel="manifest" href="manifest.webmanifest"><link rel="icon" href="icon.svg" type="image/svg+xml"><link rel="stylesheet" href="styles.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#f5f7f4">
+  <meta name="description" content="Turnaround Life — your personal nutrition and lifestyle companion.">
+  <title>Turnaround Life</title>
+  <link rel="manifest" href="/manifest.json">
+  <link rel="icon" href="/assets/icons/icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/css/variables.css">
+  <link rel="stylesheet" href="/css/global.css">
+  <link rel="stylesheet" href="/css/layout.css">
+  <link rel="stylesheet" href="/css/components.css">
+  <link rel="stylesheet" href="/css/mobile.css">
 </head>
 <body>
-<div class="app-shell">
-<aside class="sidebar"><a class="brand" href="#"><span class="brand-mark">✳</span><span>Turnaround Life<small>YOUR DAILY WELLNESS</small></span></a><div class="side-label">YOUR SPACE</div><button class="nav active" data-view="today"><span class="nav-icon icon-today">☀</span><span>Today</span></button><button class="nav" data-view="recipes"><span class="nav-icon icon-recipes">▤</span><span>My recipes</span></button><button class="nav" data-view="meals"><span class="nav-icon icon-meals">♨</span><span>Meal</span></button><button class="nav" data-view="planner"><span class="nav-icon icon-planner">▦</span><span>Meal planner</span></button><button class="nav" data-view="ingredients"><span class="nav-icon icon-ingredients">♧</span><span>Ingredients</span></button><button class="nav" data-view="progress"><span class="nav-icon icon-progress">⌁</span><span>Progress</span></button><div class="sidebar-bottom"><div class="tip-icon">✦</div><strong>Small steps, lasting change.</strong><p>Build a rhythm that works for you.</p><span class="version">TURNAROUND LIFE · VERSION 4.0</span></div></aside>
-<main class="main"><header class="topbar"><div><div class="eyebrow" id="greeting">YOUR WELLNESS, IN FOCUS</div><h1 id="page-title">Today at a glance</h1></div><div class="top-actions"><span class="date-chip" id="today-date"></span><button class="avatar" title="Profile">N</button></div></header>
-<section id="view-today" class="view">
-<div class="day-switch"><button id="prev-day" aria-label="Previous day">‹</button><div><strong id="day-label">Today</strong><small id="day-subtitle">One day at a time</small></div><button id="next-day" aria-label="Next day">›</button><button id="jump-today" class="text-button">Jump to today</button></div>
-<div class="hero-grid"><article class="card calorie-card"><div class="card-head"><div><span class="kicker">ENERGY BALANCE</span><h2>Calories</h2></div><span class="pill green-pill">Daily target</span></div><div class="calorie-content"><div class="ring" id="calorie-ring"><div class="ring-center"><strong id="calories-left">1,850</strong><span>kcal left</span></div></div><div class="calorie-stats"><div><span class="dot teal"></span><span>Eaten</span><strong id="calories-eaten">0 <small>kcal</small></strong></div><div><span class="dot pale"></span><span>Planned</span><strong id="calories-planned">0 <small>kcal</small></strong></div><div><span class="dot gold"></span><span>Daily goal</span><strong id="calories-goal">1,850 <small>kcal</small></strong></div></div></div><div class="card-foot">Planned meals count toward your outlook, not your eaten total.</div></article>
-<article class="card macro-card"><div class="card-head"><div><span class="kicker">YOUR DAILY MIX</span><h2>Macros</h2></div><button class="mini-button" id="edit-goals">Edit goals ↗</button></div><div id="macro-bars" class="macro-bars"></div><div class="macro-note">A balanced day is built one plate at a time.</div></article></div>
-<div class="section-heading"><div><span class="kicker">THE DETAILS</span><h2>Nutrients & hydration</h2></div><button class="text-button" data-go="progress">View progress ↗</button></div><div id="nutrient-grid" class="nutrient-grid"></div>
-<div class="section-heading meals-heading"><div><span class="kicker">MAKE IT A GOOD ONE</span><h2>Today's meals</h2></div><button class="primary-button" id="add-food">＋ Add food</button></div><div id="meal-list" class="meal-list"></div>
-<div class="section-heading"><div><span class="kicker">CHECK IN</span><h2>How are you feeling?</h2></div></div><article class="card checkin"><div><strong>Quick body check-in</strong><p>Keep your health notes together with your nutrition.</p></div><button class="secondary-button" id="add-metric">＋ Log a measurement</button><div id="latest-metric" class="latest-metric">No measurements logged yet.</div></article>
-</section>
-<section id="view-planner" class="view hidden"><div class="intro-card"><div><span class="kicker">A LITTLE PREP GOES A LONG WAY</span><h2>Your week, your way.</h2><p>Plan meals ahead. Mark them eaten when the real-life plate is empty.</p></div><div class="intro-art">🥗</div></div><div id="week-planner" class="week-planner"></div><div class="section-heading"><div><span class="kicker">YOUR SELECTED DAY</span><h2 id="planner-day-title">Today's plan</h2></div><button class="primary-button" id="planner-add">＋ Add meal</button></div><div id="planner-meals" class="meal-list"></div></section>
-<section id="view-recipes" class="view hidden"><div class="intro-card"><div><span class="kicker">YOUR PERSONAL COOKBOOK</span><h2>Recipes worth repeating.</h2><p>Add your own recipes and use them in your meal plan.</p></div><div class="intro-art">♨</div></div><div class="toolbar"><input id="recipe-search" placeholder="Search your recipe book…" aria-label="Search recipes"><button class="primary-button" id="new-recipe">＋ Create recipe</button></div><div id="recipe-grid" class="recipe-grid"></div></section>
-<section id="view-meals" class="view hidden"><div class="intro-card"><div><span class="kicker">PUT IT ALL TOGETHER</span><h2>Build a complete meal.</h2><p>Combine saved ingredients and recipes, adjust the amounts, and see the full nutrition picture.</p></div><div class="intro-art">🍽️</div></div><div class="section-heading"><div><span class="kicker">YOUR MEAL COLLECTION</span><h2>Meals you've created</h2></div><button class="primary-button" id="new-meal">＋ Build a meal</button></div><div id="meal-builder-grid" class="meal-builder-grid"></div></section>
-<section id="view-ingredients" class="view hidden"><div class="intro-card"><div><span class="kicker">YOUR REUSABLE PANTRY</span><h2>Ingredients, at your fingertips.</h2><p>Search USDA food data or add your own ingredients. Reuse them in recipes and calculate nutrition from the amounts you use.</p></div><div class="intro-art">🥕</div></div><div class="ingredient-search toolbar"><input id="ingredient-search" placeholder="Search USDA foods, e.g. chicken breast…" aria-label="Search USDA ingredients"><button class="primary-button" id="search-usda">Search USDA</button><button class="secondary-button" id="new-ingredient">＋ Manual ingredient</button></div><p class="api-note" id="usda-note">USDA FoodData Central search requires a USDA API key configured in Netlify. Manual ingredients always work.</p><div id="usda-results" class="usda-results"></div><div class="section-heading"><div><span class="kicker">YOUR LIBRARY</span><h2>Saved ingredients</h2></div><span class="count-pill" id="ingredient-count">0 ingredients</span></div><div id="ingredient-grid" class="ingredient-grid"></div></section>
-<section id="view-progress" class="view hidden"><div class="intro-card"><div><span class="kicker">NOTICE THE PATTERNS</span><h2>Progress, not perfection.</h2><p>Track the numbers that help you understand your own trends.</p></div><div class="intro-art">⌁</div></div><div class="section-heading"><div><span class="kicker">YOUR HEALTH NOTES</span><h2>Measurements</h2></div><button class="primary-button" id="progress-add">＋ Log measurement</button></div><div id="metrics-list" class="metrics-list"></div><div class="section-heading"><div><span class="kicker">YOUR DAILY TARGETS</span><h2>Nutrition goals</h2></div><button class="secondary-button" id="progress-goals">Edit goals</button></div><div id="goal-summary" class="goal-summary"></div></section>
-<footer>Made for real life. <span>Your data stays in this browser on this device.</span></footer></main></div>
-<div id="modal-root" class="modal-root hidden"></div><div id="toast" class="toast" role="status"></div><script src="app.js"></script>
-</body></html>
+  <div class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="#dashboard" aria-label="Turnaround Life dashboard">
+        <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 40 40"><path d="M20 34C9 27 7 17 13 10c4-4 9-2 11 2 3-5 9-5 12 0 4 7-2 16-16 22Z"/><path d="M19 29c1-8 5-13 11-17"/></svg></span>
+        <span><strong>Turnaround</strong><small>LIFE</small></span>
+      </a>
+      <div class="header-actions">
+        <span class="offline-indicator" id="connection-status"><i></i> <span>Ready</span></span>
+        <button class="icon-button" id="settings-button" aria-label="Open settings" title="Settings"><svg viewBox="0 0 24 24"><path d="M12 8.5a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7Z"/><path d="m19.4 15 .1.1 1.1.9-1.5 2.6-1.4-.5a7.8 7.8 0 0 1-1.5.9l-.2 1.5h-3l-.3-1.5a7.8 7.8 0 0 1-1.5-.9l-1.4.5-1.5-2.6 1.1-.9a7.4 7.4 0 0 1 0-1.8l-1.1-.9 1.5-2.6 1.4.5a7.8 7.8 0 0 1 1.5-.9l.3-1.5h3l.2 1.5a7.8 7.8 0 0 1 1.5.9l1.4-.5 1.5 2.6-1.1.9a7.4 7.4 0 0 1-.1 1.7Z"/></svg></button>
+      </div>
+    </header>
+
+    <main id="main-content" tabindex="-1">
+      <section class="welcome-row">
+        <div><p class="eyebrow" id="today-label">YOUR DAILY RESET</p><h1 id="page-title">Dashboard</h1><p class="subheading" id="page-subtitle">A clearer picture of your day starts here.</p></div>
+        <div class="date-chip" id="today-date"></div>
+      </section>
+
+      <section class="page-panel active" id="panel-dashboard" data-panel="dashboard">
+        <div class="hero-card">
+          <div class="hero-copy"><span class="hero-kicker">YOUR TURNAROUND, ONE DAY AT A TIME</span><h2>Small choices.<br><em>Meaningful change.</em></h2><p>Your personal nutrition and lifestyle workspace.</p></div>
+          <div class="hero-art" aria-hidden="true"><span class="orb orb-one"></span><span class="orb orb-two"></span><span class="leaf leaf-one">✦</span><span class="leaf leaf-two">✧</span><span class="hero-number">01</span></div>
+        </div>
+        <div class="section-heading"><div><p class="eyebrow">DAILY OVERVIEW</p><h2>Your dashboard</h2></div><span class="soft-pill">Foundation preview</span></div>
+        <div class="metric-grid">
+          <article class="metric-card calorie-card"><div class="metric-top"><span class="metric-icon peach">◉</span><span class="metric-label">Calories</span></div><strong class="metric-value">— <small>kcal</small></strong><div class="progress-track"><span style="width:0%"></span></div><p class="metric-foot">Your daily target will appear here</p></article>
+          <article class="metric-card"><div class="metric-top"><span class="metric-icon green">↗</span><span class="metric-label">Protein</span></div><strong class="metric-value">— <small>g</small></strong><div class="progress-track green-track"><span style="width:0%"></span></div><p class="metric-foot">Daily progress</p></article>
+          <article class="metric-card"><div class="metric-top"><span class="metric-icon blue">⌁</span><span class="metric-label">Carbohydrates</span></div><strong class="metric-value">— <small>g</small></strong><div class="progress-track blue-track"><span style="width:0%"></span></div><p class="metric-foot">Daily progress</p></article>
+          <article class="metric-card"><div class="metric-top"><span class="metric-icon lavender">◇</span><span class="metric-label">Fat</span></div><strong class="metric-value">— <small>g</small></strong><div class="progress-track lavender-track"><span style="width:0%"></span></div><p class="metric-foot">Daily progress</p></article>
+        </div>
+        <div class="dashboard-lower">
+          <article class="surface-card water-card"><div class="card-heading"><div><p class="eyebrow">HYDRATION</p><h3>Water today</h3></div><span class="metric-icon blue">≈</span></div><div class="water-placeholder"><div class="water-glass">◡</div><div><strong>Ready when you are</strong><p>Water tracking will be available in a later phase.</p></div></div><div class="unit-note">Your preferred units: fluid ounces and milliliters</div></article>
+          <article class="surface-card nutrients-card"><div class="card-heading"><div><p class="eyebrow">NUTRIENT SNAPSHOT</p><h3>Beyond the macros</h3></div><span class="metric-icon green">✳</span></div><div class="nutrient-list"><div><span>Sodium</span><b>—</b></div><div><span>Fiber</span><b>—</b></div><div><span>Potassium</span><b>—</b></div><div><span>Saturated fat</span><b>—</b></div><div><span>Cholesterol</span><b>—</b></div><div><span>Calcium</span><b>—</b></div></div></article>
+        </div>
+        <div class="phase-note"><span class="note-icon">✦</span><div><strong>Your foundation is ready to grow.</strong><p>This first release establishes navigation, design, settings, local storage and installable-app behavior. Nutrition tracking arrives in the next development phases.</p></div></div>
+      </section>
+
+      <section class="page-panel" id="panel-recipes" data-panel="recipes"><div class="empty-state"><span class="empty-illustration">▤</span><p class="eyebrow">YOUR RECIPE BOX</p><h2>Recipes, made yours.</h2><p>Your saved recipes will live here. Build a personal library of meals you love.</p><span class="coming-label">Planned for Phase 3</span></div></section>
+      <section class="page-panel" id="panel-meal" data-panel="meal"><div class="empty-state"><span class="empty-illustration">✣</span><p class="eyebrow">MEAL BUILDER</p><h2>Bring it all together.</h2><p>Combine recipes and individual ingredients into complete meals.</p><span class="coming-label">Planned for Phase 4</span></div></section>
+      <section class="page-panel" id="panel-planner" data-panel="planner"><div class="empty-state"><span class="empty-illustration">▦</span><p class="eyebrow">YOUR WEEK, AT A GLANCE</p><h2>A plan that works for you.</h2><p>Organize breakfast, lunch, dinner and snacks across the week.</p><span class="coming-label">Planned for Phase 5</span></div></section>
+      <section class="page-panel" id="panel-ingredients" data-panel="ingredients"><div class="empty-state"><span class="empty-illustration">❋</span><p class="eyebrow">INGREDIENT LIBRARY</p><h2>Know what goes in.</h2><p>Build your own ingredient library with verified nutrition and useful measurements.</p><span class="coming-label">Planned for Phase 2</span></div></section>
+      <section class="page-panel" id="panel-measurements" data-panel="measurements"><div class="empty-state"><span class="empty-illustration">⌁</span><p class="eyebrow">YOUR PROGRESS</p><h2>Progress beyond the scale.</h2><p>Keep a history of weight, body fat, blood pressure and resting heart rate.</p><span class="coming-label">Planned for Phase 6</span></div></section>
+    </main>
+
+    <nav class="bottom-nav" aria-label="Main navigation">
+      <button class="nav-item selected" data-route="dashboard" aria-current="page"><span class="nav-icon"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="8" height="8" rx="2"/><rect x="13" y="3" width="8" height="5" rx="2"/><rect x="13" y="10" width="8" height="11" rx="2"/><rect x="3" y="13" width="8" height="8" rx="2"/></svg></span><span>Dashboard</span></button>
+      <button class="nav-item" data-route="recipes"><span class="nav-icon"><svg viewBox="0 0 24 24"><rect x="4" y="3" width="15" height="18" rx="3"/><path d="M8 7h7M8 11h7M8 15h5M19 7l2-2v14l-2 2"/></svg></span><span>My Recipes</span></button>
+      <button class="nav-item" data-route="meal"><span class="nav-icon"><svg viewBox="0 0 24 24"><path d="M4 12h16M6 12a6 6 0 0 0 12 0M12 6V3M8 5l1 2M16 5l-1 2"/><path d="M3 19h18"/></svg></span><span>Meal</span></button>
+      <button class="nav-item" data-route="planner"><span class="nav-icon"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M7 3v4M17 3v4M3 10h18M8 14h2M14 14h2M8 17h2"/></svg></span><span>Planner</span></button>
+      <button class="nav-item" data-route="ingredients"><span class="nav-icon"><svg viewBox="0 0 24 24"><path d="M12 21c-5-3-7-7-5-11 2-4 7-4 9-1 3 4 1 9-4 12Z"/><path d="M11 19c0-5 2-8 6-11M8 4c2-2 5-2 7 0"/></svg></span><span>Ingredients</span></button>
+      <button class="nav-item" data-route="measurements"><span class="nav-icon"><svg viewBox="0 0 24 24"><path d="M3 18V6M3 18h18M6 15l4-5 3 2 5-7 3 2"/><circle cx="18" cy="7" r="1.5"/></svg></span><span>Measurements</span></button>
+    </nav>
+  </div>
+
+  <dialog class="settings-dialog" id="settings-dialog" aria-labelledby="settings-title">
+    <form method="dialog" class="dialog-header"><div><p class="eyebrow">PERSONALIZE YOUR SPACE</p><h2 id="settings-title">Settings</h2></div><button class="icon-button" aria-label="Close settings">×</button></form>
+    <div class="settings-content">
+      <section class="setting-group"><h3>Appearance</h3><p>Choose the look that feels right.</p><div class="segmented" role="group" aria-label="Appearance theme"><button data-theme-choice="light">☀ Light</button><button data-theme-choice="dark">☾ Dark</button><button data-theme-choice="system">◐ System</button></div></section>
+      <section class="setting-group"><h3>Measurement system</h3><p>Switch how weights and distances are displayed.</p><div class="segmented" role="group" aria-label="Measurement system"><button data-unit-choice="imperial">Imperial</button><button data-unit-choice="metric">Metric</button><button data-unit-choice="both">Both</button></div></section>
+      <section class="setting-group"><h3>Water measurement</h3><p>Choose your preferred hydration units.</p><div class="segmented" role="group" aria-label="Water measurement"><button data-water-choice="fl-oz">fl oz</button><button data-water-choice="ml">mL</button><button data-water-choice="both">Both</button></div></section>
+      <section class="setting-group"><h3>Nutrition preferences</h3><div class="preference-row"><div><strong>Additional nutrients</strong><small>Potassium, saturated fat, cholesterol and calcium</small></div><label class="switch"><input id="additional-nutrients" type="checkbox" checked><span></span></label></div><div class="preference-row"><div><strong>Sugar tracking</strong><small>Not included in Turnaround Life</small></div><span class="disabled-tag">Off</span></div></section>
+      <div class="save-status" id="settings-status" role="status" aria-live="polite">Settings save automatically on this device.</div>
+    </div>
+  </dialog>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script type="module" src="/js/app.js"></script>
+</body>
+</html>
